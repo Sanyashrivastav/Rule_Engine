@@ -160,6 +160,6 @@ This project is licensed under the MIT License.
 Happy rule-building!
 ---
 
-## Made with ❤️ by [Aditya Singh Yadav](https://github.com/aditya-mnnit) 🤖📊⚙️
+## Made by [Sanya Shrivastava]️
 
 Powering decisions, one rule at a time! 🚀✨
