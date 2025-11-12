@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Database and persistent data files
+*.sqlite3
+*.db
+*.tgz
+*.sql
+dump.rdb
+*.pid
+*.seed
+*.pid.lock
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# Temporary files and caches
+tmp/
+temp/
+.cache/
+.history/
+.vscode/
+
+# React local development files
+.eslintcache
+.idea/
+public/*.map
+
+# Coverage directory
+coverage/
+
+# Docker
+docker-compose.override.yml
+Dockerfile
+.dockerignore
+
+# Sentry files
+.sentryclirc
+
+# NPM package files
+*.tgz

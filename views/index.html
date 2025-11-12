@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Rule Engine</h1>
+    <div class="main">
+        <div class="container">
+        <!-- Tabs to switch between Create, Combine, and Evaluate sections -->
+        <div class="tab-container">
+            <button class="tab active" data-tab="create-rule">Create Rule</button>
+            <button class="tab" data-tab="combine-rule">Combine Rules</button>
+            <button class="tab" data-tab="evaluate-rule">Evaluate Rule</button>
+        </div>
+
+        <!-- Create Rule Form -->
+        <div id="create-rule" class="form-container active">
+            <form id="create-rule-form">
+            <div>
+                <label for="ruleName">Rule Name:</label>
+                <input type="text" id="ruleName" name="ruleName" required>
+            </div>
+            <div>
+                <label for="ruleString">Rule:</label>
+                <input type="text" id="ruleString" name="ruleString" required>
+            </div>
+            <button type="submit" class="submit-btn">Create Rule</button>
+        </form>
+        <pre id="create-rule-result"></pre>
+        </div>
+
+        <!-- Combine Rules Form -->
+        <div id="combine-rule" class="form-container">
+            <form id="combine-rules-form">
+            <h3>Enter Rules to Combine:</h3>
+            <div id="rules-inputs">
+                <div class="rule-container">
+                    <label for="combine-rule1">Rule 1:</label>
+                    <input type="text" id="combine-rule1" name="rule1" required>
+                </div>
+                <label for="operator1">Operator:</label>
+                    <select id="operator1" name="operator1">
+                        <option value="AND">AND</option>
+                        <option value="OR">OR</option>
+                    </select>
+                <div class="rule-container">
+                    <label for="combine-rule2">Rule 1:</label>
+                    <input type="text" id="combine-rule2" name="rule2" required>
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Combine Rules</button>
+        </form>
+        <pre id="combine-rules-result"></pre>
+        </div>
+
+        <!-- Evaluate Rule Form -->
+        <div id="evaluate-rule" class="form-container">
+           <form id="evaluate-rule-form">
+            <div>
+                <label for="evaluate-ast">Rule Name:</label>
+                <input type="text" id="evaluate-ast" name="ast" required>
+            </div>
+            <div>
+                <label for="evaluate-data">Data JSON:</label>
+                <textarea id="evaluate-data" name="data" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Evaluate Rule</button>
+        </form>
+        <pre id="evaluate-rule-result"></pre>
+        </div>
+    </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
+
+
