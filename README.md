@@ -119,7 +119,7 @@ This design allows flexible modifications by adding or removing sub-expressions 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/aditya-mnnit/Rule_Engine.git
+   git clone https://github.com/Sanyashrivastav/Rule_Engine.git
    cd Rule_Engine
    ```
 
@@ -158,8 +158,4 @@ This project is licensed under the MIT License.
 ---
 
 Happy rule-building!
----
-
-## Made with ❤️ by [Aditya Singh Yadav](https://github.com/aditya-mnnit) 🤖📊⚙️
-
-Powering decisions, one rule at a time! 🚀✨
+⚙️Powering decisions, one rule at a time! 🚀✨

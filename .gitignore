@@ -54,3 +54,5 @@ Dockerfile
 
 # NPM package files
 *.tgz
+
+.env

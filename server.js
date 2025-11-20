@@ -1,27 +1,35 @@
+// server.js
+require('dotenv').config(); // loads variables from .env into process.env
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 const mongoose = require('mongoose');
 
-// const ruleRoutes = require("./routes/ruleRoutes");
-
 const app = express();
-const PORT = 3000;
+
+// Use PORT from env or fallback to 3000
+const PORT = process.env.PORT || 3000;
+
+// Connect to MongoDB using MONGO_URI from .env
+const mongoUri = process.env.MONGO_URI;
+if (!mongoUri) {
+  console.error("ERROR: MONGO_URI not set in environment variables. Create a .env file.");
+  process.exit(1);
+}
+
 mongoose
-  .connect(
-    "mongodb+srv://adityainpersonal:J4UILWJovkT7uJtI@cluster0.hf4vn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect(mongoUri)
+  
   .then(() => {
     console.log("Connected to MongoDB");
   })
   .catch((err) => {
     console.error("Error connecting to MongoDB", err);
   });
+
+// route files
 const CREATE_RULE = require("./routes/createRule");
 const COMBINE_RULE = require("./routes/combineRule");
 const EVALUATE_RULE = require("./routes/evaluateRule");
@@ -30,10 +38,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// Serve static files from the public directory
-app.use(express.static(path.join(__dirname, "public")));
-
-// Route for serving the index.html
+// Serve index.html
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "./views/index.html"));
 });
